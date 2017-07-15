@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Header-Footer</title>
+
+<script type="text/javascript">
+	
+
+function limpiar()
+{
+document.getElementById("txtbox").value ="";
+document.getElementById("txtbox2").value ="";
+
+};
+
+
+
+function AgregarTabla()
+{
+
+txtBox=document.getElementById("txtbox").value;
+
+var tr = document.createElement('tr');
+var td = document.createElement('td');
+var texto= document.createTextNode(txtBox);
+
+td.innerHTML= '<input type="button" value="Quitar" onclick="Eliminar(this)"> ';
+td.appendChild(texto);
+
+tr.appendChild(td);
+
+document.getElementById("tablaPrincipal").appendChild(tr);
+}
+
+
+
+function Eliminar(fila)
+{
+   fila.parentNode.remove();
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>cabezera</h1>
+</header>
+
+<nav>
+    <ul>
+        <li>Inicio</li>
+        <li>Categorias</li>
+          <li>Contacto</li>
+    </ul>
+</nav>
+
+
+
+<section> 
+<h2>section</h2>
+<article>
+    <p> articulo </p>
+</article>
+
+
+<table border="1" id="tablaPrincipal">
+
+
+<tr>  
+     <td><input type="text" id="txtbox"> 
+    <td><input type="button" value="Agregar" onclick="AgregarTabla()"> </td>
+
+
+<tr  class="coltask">
+ <td colspan="2">Elemento Estatico </td>
+ </tr>
+
+
+
+</table>
+
+</section>
+
+<aside>
+    <h3>esta es la barra lateral</h3>
+
+</aside>
+
+<footer>
+<h3>footer</h3>
+ <h4>derechos reservados.</h4>   
+</footer>
+
+
+</body>
